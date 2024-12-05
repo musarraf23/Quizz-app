@@ -1,4 +1,4 @@
-const server_url = 'http://localhost:1000';
+const server_url = 'https://quizz-app-ralr.onrender.com/';
 
 
 export async function getQuestions() {
