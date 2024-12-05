@@ -7,10 +7,10 @@ import { ThemeProvider } from './Contexts/Theme.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <NextUIProvider>
-      <ThemeProvider>
-        <App />
-      </ThemeProvider>
-    </NextUIProvider>
+      <NextUIProvider>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </NextUIProvider>
   </React.StrictMode>,
 )

@@ -1,36 +1,42 @@
 import React, { useEffect, useState } from 'react'
 import { Spinner } from "@nextui-org/react";
-import { quizzes } from '../constants';
 import QuestionCard from '../components/QuestionCard';
 import ReportCard from '../components/ReportCard';
+import { getQuestions } from '../services/api';
 
 function QuizzScreen() {
+
   const [questions, setQuestions] = useState([]);
   const [questionIdx, setQuestionIdx] = useState(0);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
+    (async()=>{
+
+    
       try {
-        const stored = localStorage.getItem('questionResponse');
-
-        // fetch from server
-        if (!stored) {
-          setLoading(false); 
-          setQuestions((quizzes).map(quizz => ({ ...quizz, response: '' })))
-          return;
+        let quizzes = [];
+        while(quizzes.length == 0)
+        {
+          quizzes = await getQuestions()
         }
+        setQuestions((quizzes).map(quizz => ({ ...quizz, response: '' })))
+        
+        // const stored = localStorage.getItem('questionResponse');
+        // // fetch from server
+        // if (!stored) {
+        //   setLoading(false); 
+        //   return;
+        // }
 
-        // use stord
-        setQuestions(JSON.parse(stored))
+        // // use stord
+        // setQuestions(JSON.parse(stored))
       } catch (err) {
 
       }
       console.log('loaded...');
       setLoading(false);
-
-    }, 1000)
-
+    })()
   }, [])
 
   const resetStorage = () => {
