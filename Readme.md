@@ -23,5 +23,3 @@ This project is a **Full Stack Quiz App** developed as part of our Web Technolog
 - **Node.js**
 
 
----
-
