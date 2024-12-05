@@ -1,4 +1,4 @@
-const server_url = 'https://quizz-app-ralr.onrender.com/;
+const server_url = 'https://quizz-app-ralr.onrender.com/';
 
 
 export async function getQuestions() {
