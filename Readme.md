@@ -1,7 +1,8 @@
 # Quiz App
 
 This project is a **Full Stack Quiz App** developed as part of our Web Technology assignment. The application allows users to take quizzes, view their scores, and manage questions. It demonstrates the integration of front-end, back-end, and database technologies.
-
+<br><br><br>
+[live preview](https://quizz-app-eta-wine.vercel.app/)
 ---
 
 ## Features
